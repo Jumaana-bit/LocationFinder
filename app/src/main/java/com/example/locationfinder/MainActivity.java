@@ -10,10 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import com.example.locationfinder.databinding.ActivityMainBinding;
 
@@ -135,6 +131,8 @@ public class MainActivity extends AppCompatActivity {
         updateButton.setOnClickListener(v -> {
             latitudeEditText.setVisibility(View.VISIBLE);
             longitudeEditText.setVisibility(View.VISIBLE);
+            latitudeLabel.setVisibility(View.VISIBLE);
+            longitudeLabel.setVisibility(View.VISIBLE);
 
             String address = addressEditText.getText().toString().trim();
             if (!address.isEmpty()) {
@@ -148,8 +146,8 @@ public class MainActivity extends AppCompatActivity {
                     // Hide the EditTexts after updating
                     latitudeEditText.setVisibility(View.GONE);
                     longitudeEditText.setVisibility(View.GONE);
-                    latitudeLabel.setVisibility(View.VISIBLE);
-                    longitudeLabel.setVisibility(View.VISIBLE);
+                    latitudeLabel.setVisibility(View.GONE);
+                    longitudeLabel.setVisibility(View.GONE);
                 } catch (NumberFormatException e) {
                     Toast.makeText(this, "Enter longitude", Toast.LENGTH_SHORT).show();
                 }

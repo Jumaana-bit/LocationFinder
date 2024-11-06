@@ -4,14 +4,26 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
+    <!-- Heading -->
+    <TextView
+        android:id="@+id/pageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/heading"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"/>
+
     <!-- Address Input -->
     <TextView
         android:id="@+id/addressLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Address"
-        android:textSize="16sp"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@id/pageTitle"
+        android:layout_alignParentStart="true"
+        android:text="@string/address"
+        android:textSize="16sp" />
 
     <EditText
         android:id="@+id/addressEditText"
@@ -20,7 +32,7 @@
         android:layout_below="@id/addressLabel"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="12dp"
-        android:hint="Enter address"
+        android:hint="@string/inputAddress"
         android:inputType="text"
         android:padding="12dp" />
 
@@ -31,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/addressEditText"
         android:layout_marginTop="16dp"
-        android:text="Latitude"
+        android:text="@string/latitudeLabel"
         android:textSize="16sp" />
 
     <EditText
@@ -40,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/latitudeLabel"
         android:layout_marginTop="4dp"
-        android:hint="Enter latitude"
+        android:hint="@string/latitude"
         android:inputType="numberDecimal"
         android:padding="12dp" />
 
@@ -51,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/latitudeEditText"
         android:layout_marginTop="16dp"
-        android:text="Longitude"
+        android:text="@string/inputLongitude"
         android:textSize="16sp" />
 
     <EditText
@@ -60,37 +72,16 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/longitudeLabel"
         android:layout_marginTop="12dp"
-        android:hint="Enter longitude"
+        android:hint="@string/longitude"
         android:inputType="numberDecimal"
         android:padding="12dp" />
-
-    <!-- Latitude and Longitude Text Views -->
-    <TextView
-        android:id="@+id/latitudeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Latitude: "
-        android:textSize="18sp"
-        android:layout_below="@id/longitudeEditText"
-        android:layout_marginTop="16dp"
-        android:layout_alignParentStart="true"/>
-
-    <TextView
-        android:id="@+id/longitudeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Longitude: "
-        android:textSize="18sp"
-        android:layout_below="@id/latitudeTextView"
-        android:layout_marginTop="8dp"
-        android:layout_alignParentStart="true" />
 
     <!-- Buttons -->
     <LinearLayout
         android:id="@+id/buttonContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/longitudeTextView"
+        android:layout_below="@id/longitudeEditText"
         android:layout_marginTop="24dp"
         android:orientation="horizontal"
         android:weightSum="4">
@@ -100,29 +91,57 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Add" />
+            android:text="Add"
+            android:backgroundTint="@color/purple_500"
+            android:textColor="@android:color/white"/>
 
         <Button
             android:id="@+id/queryButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Query" />
+            android:text="Query"
+            android:backgroundTint="@color/purple_500"
+            android:textColor="@android:color/white"/>
 
         <Button
             android:id="@+id/updateButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Update" />
+            android:text="Update"
+            android:backgroundTint="@color/purple_500"
+            android:textColor="@android:color/white"/>
 
         <Button
             android:id="@+id/deleteButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Delete" />
-
+            android:text="Delete"
+            android:backgroundTint="@color/purple_500"
+            android:textColor="@android:color/white"/>
     </LinearLayout>
+
+    <!-- Latitude and Longitude Display -->
+    <TextView
+        android:id="@+id/latitudeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonContainer"
+        android:layout_marginTop="16dp"
+        android:text="Latitude: "
+        android:textSize="18sp"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/longitudeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/latitudeTextView"
+        android:layout_marginTop="8dp"
+        android:text="Longitude: "
+        android:textSize="18sp"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
